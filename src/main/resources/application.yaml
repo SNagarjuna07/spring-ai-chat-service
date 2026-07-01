@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: ai-chat-service
+
+  ai:
+    openai:
+      api-key: ${GROQ_API_KEY:}
+      base-url: ${GROQ_BASE_URL}
+      chat:
+        model: ${GROQ_MODEL}
+        max-tokens: ${GROQ_MAX_TOKENS}
+        temperature: ${GROQ_TEMPERATURE}
