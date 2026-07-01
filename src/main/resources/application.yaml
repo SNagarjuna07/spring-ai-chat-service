@@ -10,3 +10,19 @@ spring:
         model: ${GROQ_MODEL}
         max-tokens: ${GROQ_MAX_TOKENS}
         temperature: ${GROQ_TEMPERATURE}
+
+app:
+  chat:
+    system-prompt-file: classpath:prompts/system.st
+    memory-max-messages: 10   # sliding window size
+
+logging:
+  level:
+    org.springframework.ai: DEBUG
+    com.nagarjuna: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics
